@@ -1,0 +1,45 @@
+/* :: ~ basic spinning loader ~ :: */
+
+:root{ margin: 0;
+    padding: 0;
+    box-sizing: border-box;}
+    
+body{ background-color: black;
+}
+
+.content{ display: flex;
+    justify-content: center;
+    justify-items:center;
+    align-items: center;
+   
+}
+    
+.load{ position: relative;
+    width: 12em;
+    height: 12em;
+    top: 18rem;
+/* :: visualize => the ring : */
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2em dotted rgb(255, 0, 221);
+    border-top-color: rgb(238, 255, 0); 
+    border-top-style: dotted;  
+    animation: view 2.5s infinite;
+    transition: 0.6s ease-in-out;
+}
+
+@keyframes view{ 
+    0%{transform: rotate(360deg);
+    border-style: solid;}
+
+    50%{filter:blur(0.25em);}
+
+/* :: >> optional changing border styles adding filters, play around << ::*/
+
+    100%{transform: rotate(0deg);
+    border-style: dotted; 
+    filter:blur(0em);
+    border-color: rgb(238, 255, 0);
+    border-top-color: rgb(234, 0, 255);}
+}
+    
